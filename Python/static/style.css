@@ -1,0 +1,143 @@
+/* General Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #EEEFE0; /* Lightest background */
+    color: #333; /* Darker text for readability */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensures content is centered vertically */
+}
+
+/* Container for the form to give it a defined space */
+.container {
+    background-color: #D1D8BE; /* Slightly darker background for the form area */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    width: 100%;
+    max-width: 650px; /* Increased max-width for potential side-by-side inputs */
+    box-sizing: border-box; /* Include padding in the width */
+}
+
+/* Heading Styling */
+h2 {
+    color: #819A91; /* Main accent color for headings */
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.4em; /* Slightly larger heading */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.08);
+}
+
+h3 { /* For the prediction text */
+    color: #A7C1A8; /* Another accent color for the prediction */
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.8em;
+    padding: 15px 20px; /* Added horizontal padding */
+    background-color: #EEEFE0; /* Light background for prediction */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    border: 1px solid #A7C1A8; /* Subtle border */
+}
+
+/* Form Styling - Use Flexbox for better layout */
+form {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    gap: 20px; /* Spacing between form groups */
+    justify-content: space-between; /* Distribute items with space between */
+}
+
+/* Styling for each form group (label + input) */
+.form-group {
+    flex: 1 1 calc(50% - 10px); /* Two columns layout, accounting for gap */
+    min-width: 250px; /* Ensure inputs don't get too narrow on smaller screens */
+    box-sizing: border-box;
+}
+
+/* Form Label Styling */
+label {
+    display: block; /* Each label on its own line */
+    margin-bottom: 8px;
+    color: #555; /* Slightly muted text for labels */
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Input Field Styling */
+input[type="text"] {
+    width: 100%; /* Full width of its parent .form-group */
+    padding: 12px;
+    border: 1px solid #A7C1A8; /* Border color from palette */
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+input[type="text"]:focus {
+    border-color: #819A91; /* Darker accent on focus */
+    box-shadow: 0 0 8px rgba(129, 154, 145, 0.3); /* Subtle glow */
+    outline: none; /* Remove default outline */
+}
+
+/* Submit Button Styling */
+input[type="submit"] {
+    background-color: #819A91; /* Primary button color */
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Make button span full width in the flex container */
+    flex: 1 0 100%; /* Flex basis 100% to take full row */
+    margin-top: 20px; /* Space above the button */
+    box-sizing: border-box;
+}
+
+input[type="submit"]:hover {
+    background-color: #6C8279; /* Slightly darker on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+input[type="submit"]:active {
+    background-color: #5B7068; /* Even darker on active/click */
+    transform: translateY(0); /* Return to original position */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+        max-width: 95%; /* Adjust max-width for smaller screens */
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.6em;
+    }
+
+    /* On smaller screens, stack form groups vertically */
+    .form-group {
+        flex: 1 1 100%; /* One column layout */
+    }
+
+    input[type="submit"] {
+        padding: 12px 20px;
+        font-size: 1.1em;
+    }
+}
